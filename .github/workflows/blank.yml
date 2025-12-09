@@ -1,0 +1,19 @@
+name: Deploy to VM
+
+on:
+  push:
+    branches: [ main, development ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Deploy to Virtual Machine
+      run: |
+        echo "Деплой ветки ${{ github.ref }}"
+        # Здесь будет команда для деплоя на твою VM
+        # Но для этого нужен доступ по SSH
